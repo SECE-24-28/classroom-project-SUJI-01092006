@@ -1,0 +1,14 @@
+
+.btn-register {
+  margin-top: 90px;
+  margin-left: 160px;
+  padding: 8px 15px;
+  border-radius: 3px;
+  background-color: red;
+  color: white;
+  border-style: none;
+}
+.btn-register:hover {
+  opacity: 0.2;
+  transform: scale(1.1);
+}
