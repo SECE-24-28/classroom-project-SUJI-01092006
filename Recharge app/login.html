@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+
+<body class="flex justify-center items-center h-screen">
+
+<div class="bg-white p-8 rounded-xl custom-card w-96">
+    <h2 class="heading">Login</h2>
+
+   <form onsubmit="handleLogin(event)">
+    <input id="loginEmail" class="border p-2 w-full rounded mb-4" type="email" placeholder="Email">
+    <input id="loginPassword" class="border p-2 w-full rounded mb-4" type="password" placeholder="Password">
+
+    <button class="bg-blue-600 text-white p-2 w-full rounded">Login</button>
+</form>
+
+<script src="script.js"></script>
+
+
+    <p class="mt-4 text-center">
+        Don’t have an account?
+        <a href="signup.html" class="text-blue-600">Signup</a>
+    </p>
+</div>
+
+</body>
+</html>

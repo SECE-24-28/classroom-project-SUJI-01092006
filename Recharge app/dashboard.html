@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>User Dashboard</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            background-color: #0d1224;
+            color: #d1d5db;
+        }
+        .sidebar {
+            background-color: #0a0f1f;
+        }
+        .card {
+            background-color: #111827;
+            border: 1px solid #1f2937;
+        }
+    </style>
+</head>
+
+<body class="flex">
+
+<!-- ======================= SIDEBAR ======================= -->
+<aside class="sidebar w-72 h-screen p-6 sticky top-0">
+    <h1 class="text-2xl font-bold text-white mb-6">Recharge <span class="text-blue-500">API</span></h1>
+
+    <ul class="space-y-4 text-gray-300 font-medium">
+        <a href="dashboard.html" class="block hover:text-blue-400">Dashboard</a>
+        <a href="recharge.html" class="block hover:text-blue-400">New Recharge</a>
+        <a href="#" class="block hover:text-blue-400">My Profile</a>
+        <a href="login.html" class="block text-red-400 hover:text-red-300">Logout</a>
+    </ul>
+</aside>
+
+<!-- ======================= MAIN CONTENT ======================= -->
+<main class="flex-1 p-10">
+
+    <!-- TITLE -->
+    <h2 class="text-3xl font-bold text-white mb-6">Welcome Back 👋</h2>
+
+    <!-- USER INFO -->
+    <div class="card p-6 rounded-xl mb-6">
+        <h3 class="text-xl font-bold mb-4 text-white">Account Details</h3>
+        <div class="grid md:grid-cols-3 gap-4 text-gray-300">
+            <p><strong>Name:</strong> <span id="userName">User</span></p>
+            <p><strong>Email:</strong> <span id="userEmail">-</span></p>
+            <p><strong>Mobile:</strong> <span id="userMobile">-</span></p>
+        </div>
+    </div>
+
+    <!-- SUMMARY CARDS -->
+    <div class="grid md:grid-cols-3 gap-6 mb-8">
+
+        <!-- Wallet -->
+        <div class="card p-6 rounded-xl shadow text-center">
+            <h3 class="text-lg font-bold mb-2">Wallet Balance</h3>
+            <p class="text-3xl font-bold text-green-400">₹250</p>
+        </div>
+
+        <!-- Recommended Plans -->
+        <div class="card p-6 rounded-xl shadow text-center">
+            <h3 class="text-lg font-bold mb-2">Recommended Plan</h3>
+            <p class="text-blue-400 font-semibold">₹199 • 1.5GB/day</p>
+            <p>28 Days</p>
+        </div>
+
+        <!-- Recent Operator -->
+        <div class="card p-6 rounded-xl shadow text-center">
+            <h3 class="text-lg font-bold mb-2">Recently Used Operator</h3>
+            <p class="text-yellow-400 font-semibold">Jio</p>
+        </div>
+
+    </div>
+
+    <!-- QUICK ACTIONS -->
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+        <a href="recharge.html" class="card p-6 rounded-xl text-center hover:bg-blue-900">
+            <h3 class="font-bold text-white mb-2">📱 New Recharge</h3>
+            <p class="text-gray-300">Recharge any number instantly.</p>
+        </a>
+
+        <div class="card p-6 rounded-xl text-center">
+            <h3 class="font-bold text-white mb-2">🔥 Offers & Discounts</h3>
+            <p class="text-gray-300">Special deals available today.</p>
+        </div>
+
+        <div class="card p-6 rounded-xl text-center">
+            <h3 class="font-bold text-white mb-2">👤 Edit Profile</h3>
+            <p class="text-gray-300">Update personal details and more.</p>
+        </div>
+    </div>
+
+    <!-- ======================= RECHARGE HISTORY ======================= -->
+    <div class="card p-6 rounded-xl shadow-lg mb-10">
+        <h3 class="text-2xl font-bold mb-4 text-white">Recharge History</h3>
+        <div id="history" class="space-y-4">
+            <!-- JS will load multiple entries -->
+        </div>
+    </div>
+
+    <!-- FAQ SECTION -->
+    <div class="card p-6 rounded-xl shadow-lg mb-10">
+        <h3 class="text-2xl font-bold mb-4 text-white">FAQ</h3>
+
+        <p class="text-gray-300 mb-2"><strong>Q:</strong> How long does recharge take?</p>
+        <p class="text-gray-400 mb-4"><strong>A:</strong> It is instant and will reflect immediately.</p>
+
+        <p class="text-gray-300 mb-2"><strong>Q:</strong> Can I get a refund?</p>
+        <p class="text-gray-400 mb-4"><strong>A:</strong> Refunds depend on the operator’s policy.</p>
+
+        <p class="text-gray-300 mb-2"><strong>Q:</strong> How can I contact support?</p>
+        <p class="text-gray-400 mb-4"><strong>A:</strong> Use the support box below.</p>
+    </div>
+
+    <!-- SUPPORT BOX -->
+    <div class="card p-6 rounded-xl shadow-lg mb-20">
+        <h3 class="text-2xl font-bold text-white mb-4">Support</h3>
+        <p class="text-gray-300 mb-2">📧 Email: support@rechargeapp.com</p>
+        <p class="text-gray-300">📞 Phone: 1800-123-456</p>
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+<script>
+    let user = JSON.parse(localStorage.getItem("user"));
+    if (user) {
+        document.getElementById("userName").innerText = user.name;
+        document.getElementById("userEmail").innerText = user.email;
+        document.getElementById("userMobile").innerText = user.mobile;
+    }
+    loadDashboard();
+</script>
+
+</body>
+</html>

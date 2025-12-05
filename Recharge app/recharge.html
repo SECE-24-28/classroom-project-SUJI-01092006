@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile Recharge</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            background-color: #0d1224; 
+            color: #e5e7eb;
+        }
+        .card {
+            background-color: #111827;
+            border: 1px solid #1f2937;
+        }
+        .heading {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="p-10 flex justify-center">
+
+    <div class="card w-full max-w-xl p-8 rounded-2xl shadow-xl">
+
+        <h1 class="heading mb-8">Mobile Recharge</h1>
+
+        <form>
+
+            <label class="block text-gray-300 font-semibold mb-1">
+                Mobile Number:
+            </label>
+            <input 
+                id="mobileNumber" 
+                class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white mb-6" 
+                type="text" 
+                placeholder="Enter your mobile number"
+            >
+
+            <label class="block text-gray-300 font-semibold mb-1">
+                Select Operator:
+            </label>
+            <select 
+                id="operator"
+                class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white mb-6"
+            >
+                <option>Jio</option>
+                <option>Airtel</option>
+                <option>Vi</option>
+                <option>BSNL</option>
+            </select>
+
+            <button 
+                type="button"
+                onclick="saveRecharge()"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold p-3 rounded-lg"
+            >
+                Next
+            </button>
+
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
