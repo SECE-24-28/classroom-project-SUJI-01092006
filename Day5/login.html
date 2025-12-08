@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+
+    <div class="bg-white p-6 rounded-lg shadow w-80">
+
+        <h2 class="text-2xl font-bold text-center mb-4">Login</h2>
+
+        <label class="font-medium">Username</label>
+        <input type="text" class="w-full p-2 border rounded mb-3" placeholder="Enter Username">
+
+        <label class="font-medium">Password</label>
+        <input type="password" class="w-full p-2 border rounded mb-4" placeholder="Enter Password">
+
+        <button onclick="window.location.href='index.html'"
+                class="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg shadow mt-2">
+            Login
+        </button>
+
+        <p class="text-center text-sm mt-4">Don't have an account?</p>
+
+        <button onclick="window.location.href='signup.html'"
+                class="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg shadow mt-2">
+            Create Account
+        </button>
+
+    </div>
+
+</body>
+</html>

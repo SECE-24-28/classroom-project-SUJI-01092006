@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recharge Plans</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #ff6600;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Page container */
+        .container {
+            padding: 30px;
+        }
+
+        .title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Plan Box */
+        .plan-box {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .plan-box h3 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .plan-box p {
+            margin: 5px 0 0 0;
+            color: gray;
+            font-size: 15px;
+        }
+
+        /* Apply Button */
+        .apply-btn {
+            background: #ff6600;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .apply-btn:hover {
+            background: #e65500;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Recharge App</h1>
+
+        <a href="login.html">Login / Register</a>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+
+        <div class="title">Available Recharge Plans</div>
+
+        <!-- Plan 1 -->
+        <div class="plan-box">
+            <div>
+                <h3>₹219</h3>
+                <p>28 Days • 3GB Data</p>
+            </div>
+
+            <button class="apply-btn">Apply</button>
+        </div>
+
+        <!-- Plan 2 -->
+        <div class="plan-box">
+            <div>
+                <h3>₹299</h3>
+                <p>28 Days • 1GB/Day</p>
+            </div>
+
+            <button class="apply-btn">Apply</button>
+        </div>
+
+    </div>
+
+</body>
+</html>

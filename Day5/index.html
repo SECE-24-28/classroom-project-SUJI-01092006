@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recharge App</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #f7f8fa;
+        font-family: Arial;
+    }
+
+    /* TOP HEADER */
+    header {
+        background: white;
+        padding: 15px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    header h1 { font-size: 28px; font-weight: bold; }
+    header img { width: 120px; }
+    .login { color: #ff6600; font-size: 18px; text-decoration: none; }
+
+    /* PAGE LAYOUT */
+    .layout {
+        display: flex;
+        padding: 20px;
+        gap: 25px;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+        width: 230px;
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        height: fit-content;
+    }
+
+    .menu-link {
+        display: block;
+        font-size: 20px;
+        color: black;
+        text-decoration: none;
+        margin-bottom: 20px;
+    }
+
+    .menu-link:hover { color: #ff6600; }
+
+    .promo-img {
+        width: 100%;
+        border-radius: 12px;
+        margin-top: 20px;
+    }
+
+    /* MAIN CONTENT */
+    .content {
+        flex: 1;
+    }
+
+    /* PLAN UI */
+    .box {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        margin-bottom: 25px;
+    }
+
+    .tabs {
+        display: flex;
+        gap: 30px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+    }
+
+    .tab {
+        font-weight: bold;
+        color: gray;
+        cursor: pointer;
+    }
+
+    .active-tab {
+        color: #ff6600;
+        border-bottom: 3px solid #ff6600;
+        padding-bottom: 5px;
+    }
+
+    .plan-card {
+        background: white;
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 15px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+        align-items: center;
+    }
+
+    .apply-btn {
+        background: #ff6600;
+        color: white;
+        padding: 6px 14px;
+        font-size: 14px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .apply-btn:hover { background: #cc5200; }
+
+    /* DASHBOARD */
+    .welcome { font-size: 28px; margin-bottom: 5px; }
+    .sub-welcome { color: #666; margin-bottom: 25px; }
+    .section { margin-bottom: 35px; }
+
+    .transaction-card, .offer-card {
+        background: #f8f8f8;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    .offer-card { border-left: 4px solid #ff3b3b; }
+
+    .operators { display: flex; gap: 20px; }
+    .operators img { width: 60px; object-fit: contain; }
+
+    footer {
+        text-align: center;
+        padding: 15px;
+        background: white;
+        color: gray;
+        border-radius: 10px;
+        margin-top: 30px;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div style="display:flex; align-items:center; gap:15px;">
+        <img src="homeimage.png.png">
+        <h1>Recharge App</h1>
+    </div>
+    <a class="login" href="login.html">Login / Register</a>
+</header>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <a href="home.html" class="menu-link">Home</a>
+        <a href="support.html" class="menu-link">Help & Support</a>
+        <img src="recimg2.png.png" class="promo-img">
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <!-- SELECT PLAN SECTION -->
+        <div class="box">
+            <h2>Select Plan</h2>
+
+            <div class="tabs">
+                <p class="tab active-tab" onclick="changeTab(this,'Recommended')">RECOMMENDED</p>
+                <p class="tab" onclick="changeTab(this,'Truly Unlimited')">TRULY UNLIMITED</p>
+                <p class="tab" onclick="changeTab(this,'Smart Recharge')">SMART RECHARGE</p>
+                <p class="tab" onclick="changeTab(this,'Data')">DATA</p>
+                <p class="tab" onclick="changeTab(this,'Unlimited 5G')">UNLIMITED 5G</p>
+            </div>
+
+            <div id="plans">Loading...</div>
+        </div>
+
+        <!-- DASHBOARD CONTENT BELOW -->
+        <h1 class="welcome">Welcome to your Recharge Dashboard</h1>
+        <p class="sub-welcome">Manage your recharges, view offers and track recent activity.</p>
+
+        <div class="section">
+            <h2>Recent Transactions</h2>
+            <div class="transaction-card"><strong>₹199 Airtel Recharge</strong><br><small>Success • Dec 5, 2025</small></div>
+            <div class="transaction-card"><strong>₹239 Jio Recharge</strong><br><small>Success • Nov 28, 2025</small></div>
+            <div class="transaction-card"><strong>₹149 VI Recharge</strong><br><small>Failed • Nov 21, 2025</small></div>
+        </div>
+
+        <div class="section">
+            <h2>Latest Offers</h2>
+            <div class="offer-card"><strong>1GB Extra Data</strong> on recharge above ₹299</div>
+            <div class="offer-card"><strong>₹30 Cashback</strong> on first recharge</div>
+            <div class="offer-card"><strong>Unlimited Calls</strong> + 2GB/day on ₹399 plan</div>
+        </div>
+        <div class="section">
+    <p style="font-size:16px; color:#555;">
+        With Recharge App, managing your mobile recharges has never been easier. 
+        We offer a user-friendly interface that helps you quickly browse, compare, 
+        and choose the best recharge plans across all major telecom operators. 
+        Whether you are looking for prepaid packs, unlimited calling plans, or data add-ons, 
+        everything is organized for your convenience.
+    </p>
+
+    <p style="font-size:16px; color:#555;">
+        Our system provides real-time updates on offers and special deals so that you never 
+        miss an opportunity to save. You can also view your previous recharge transactions, 
+        access customer support, and receive personalized plan recommendations based on your usage.
+    </p>
+
+    <p style="font-size:16px; color:#555;">
+        Enjoy secure payments, instant recharge confirmations, and a smooth overall experience—all 
+        in one place.
+    </p>
+</div>
+
+    </div>
+</div>
+
+<script>
+const apiURL = "https://69327f6ce5a9e342d26f6d83.mockapi.io/Rechargeapp";
+let allPlans = [];
+
+// Load API
+async function loadAPI() {
+    const res = await fetch(apiURL);
+    allPlans = await res.json();
+    filterPlans("Recommended");
+}
+loadAPI();
+
+// Change Tab
+function changeTab(tab, category) {
+    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active-tab"));
+    tab.classList.add("active-tab");
+    filterPlans(category);
+}
+
+// Filter Plans
+function filterPlans(category) {
+    let filtered = allPlans.filter(plan =>
+        plan.Type.toLowerCase() === category.toLowerCase()
+    );
+    showPlans(filtered);
+}
+
+// SHOW PLANS (UPDATED APPLY BUTTON)
+function showPlans(plans) {
+
+    let html = "";
+
+    plans.forEach(p => {
+        html += `
+        <div class="plan-card">
+            <div>
+                <h3>₹${p.price}</h3>
+                <p>${p.Validity} • ${p.data}</p>
+                <p>${p.call}</p>
+            </div>
+
+            <button class="apply-btn" onclick="goToApplyPage('${p.Type}', '${p.price}')">APPLY</button>
+        </div>
+        `;
+    });
+
+    document.getElementById("plans").innerHTML = html;
+}
+
+// NEW FUNCTION TO OPEN apply.html
+function goToApplyPage(type, price) {
+    window.location.href = `apply.html?type=${type}&price=${price}`;
+}
+
+</script>
+
+</body>
+</html>
